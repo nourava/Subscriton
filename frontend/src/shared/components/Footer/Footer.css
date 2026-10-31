@@ -1,0 +1,37 @@
+.bl-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+}
+
+.bl-footer__ticker {
+  background: #ffffff;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.bl-footer__ticker-content {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  padding-left: 1.5rem;
+}
+
+.bl-ticker-dot {
+  color: var(--color-primary);
+  margin: 0 1rem;
+  font-size: 1.1rem;
+}
+
+.bl-footer__bottom {
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}

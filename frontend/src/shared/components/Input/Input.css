@@ -1,0 +1,68 @@
+.bl-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.bl-form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.bl-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.bl-input-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--text-muted);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.bl-input, .bl-select {
+  width: 100%;
+  padding: 0.75rem 1.1rem;
+  font-size: 0.925rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.bl-input--with-icon {
+  padding-left: 2.75rem;
+}
+
+.bl-input:focus, .bl-select:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--color-primary-glow);
+}
+
+.bl-input::placeholder {
+  color: var(--text-muted);
+}
+
+.bl-form-group--error .bl-input {
+  border-color: var(--color-danger);
+}
+
+.bl-form-error {
+  font-size: 0.775rem;
+  color: var(--color-danger);
+  font-weight: 500;
+}
+
+.bl-form-helper {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+}

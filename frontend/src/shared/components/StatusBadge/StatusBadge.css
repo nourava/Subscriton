@@ -1,13 +1,14 @@
 .bl-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-full);
+  gap: 0.45rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  border: 1px solid transparent;
 }
 
 .bl-badge__dot {
@@ -19,29 +20,34 @@
 .bl-badge--success {
   background: var(--color-success-bg);
   color: var(--color-success);
+  border-color: var(--color-success-border);
 }
 .bl-badge--success .bl-badge__dot { background: var(--color-success); }
 
 .bl-badge--warning {
   background: var(--color-warning-bg);
   color: var(--color-warning);
+  border-color: var(--color-warning-border);
 }
 .bl-badge--warning .bl-badge__dot { background: var(--color-warning); }
 
 .bl-badge--danger {
   background: var(--color-danger-bg);
   color: var(--color-danger);
+  border-color: var(--color-danger-border);
 }
 .bl-badge--danger .bl-badge__dot { background: var(--color-danger); }
 
 .bl-badge--neutral {
-  background: rgba(156, 163, 175, 0.15);
+  background: #f1f5f9;
   color: var(--text-secondary);
+  border-color: var(--border-subtle);
 }
-.bl-badge--neutral .bl-badge__dot { background: var(--text-secondary); }
+.bl-badge--neutral .bl-badge__dot { background: var(--text-muted); }
 
 .bl-badge--info {
   background: var(--color-info-bg);
   color: var(--color-info);
+  border-color: var(--color-info-border);
 }
 .bl-badge--info .bl-badge__dot { background: var(--color-info); }

@@ -2,76 +2,134 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  border-radius: var(--radius-md);
+  gap: 0.6rem;
+  border-radius: var(--radius-pill);
   font-weight: 600;
   cursor: pointer;
   border: 1px solid transparent;
   transition: all var(--transition-fast);
   white-space: nowrap;
+  letter-spacing: -0.01em;
+  position: relative;
+  overflow: hidden;
 }
 
 .bl-btn:disabled {
-  opacity: 0.5;
+  opacity: 0.55;
   cursor: not-allowed;
 }
 
 /* Sizes */
 .bl-btn--sm {
-  padding: 0.4rem 0.75rem;
+  padding: 0.45rem 1rem;
   font-size: 0.825rem;
 }
 .bl-btn--md {
-  padding: 0.6rem 1.1rem;
+  padding: 0.65rem 1.35rem;
   font-size: 0.9rem;
 }
 .bl-btn--lg {
-  padding: 0.75rem 1.5rem;
+  padding: 0.85rem 1.75rem;
   font-size: 1rem;
 }
 
-/* Variants */
+/* Adjust padding when combo arrow circle is present */
+.bl-btn--with-arrow.bl-btn--sm {
+  padding-right: 0.45rem;
+}
+.bl-btn--with-arrow.bl-btn--md {
+  padding-right: 0.55rem;
+}
+.bl-btn--with-arrow.bl-btn--lg {
+  padding-right: 0.7rem;
+}
+
+/* Signature Circular Arrow Bubble from Reference */
+.bl-btn__arrow-bubble {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+  flex-shrink: 0;
+}
+.bl-btn--sm .bl-btn__arrow-bubble {
+  width: 22px;
+  height: 22px;
+}
+.bl-btn--lg .bl-btn__arrow-bubble {
+  width: 32px;
+  height: 32px;
+}
+
+.bl-btn:hover:not(:disabled) .bl-btn__arrow-bubble {
+  transform: translateX(2px);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Primary Variant (Cobalt Blue from reference) */
 .bl-btn--primary {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-  color: #ffffff;
-  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.3);
+  background-color: var(--color-primary);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-pill-button);
 }
 .bl-btn--primary:hover:not(:disabled) {
-  opacity: 0.95;
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.45);
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+}
+
+/* Navy Variant (Deep Navy from reference featured card) */
+.bl-btn--navy {
+  background-color: var(--color-navy);
+  color: var(--text-inverse);
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.25);
+}
+.bl-btn--navy:hover:not(:disabled) {
+  background-color: var(--color-navy-dark);
   transform: translateY(-1px);
 }
 
+/* Secondary Variant */
 .bl-btn--secondary {
-  background: var(--bg-surface-elevated);
+  background: var(--bg-surface);
   color: var(--text-primary);
   border-color: var(--border-subtle);
+  box-shadow: var(--shadow-sm);
 }
 .bl-btn--secondary:hover:not(:disabled) {
   background: var(--bg-surface-hover);
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--border-medium);
 }
-
-.bl-btn--outline {
-  background: transparent;
-  color: var(--text-primary);
-  border-color: var(--border-subtle);
-}
-.bl-btn--outline:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--color-primary);
+.bl-btn--secondary .bl-btn__arrow-bubble {
+  background: var(--bg-surface-hover);
   color: var(--color-primary);
 }
 
+/* Outline Variant */
+.bl-btn--outline {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.bl-btn--outline:hover:not(:disabled) {
+  background: var(--color-primary-light);
+}
+
+/* Ghost Variant */
 .bl-btn--ghost {
   background: transparent;
   color: var(--text-secondary);
 }
 .bl-btn--ghost:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-surface-hover);
   color: var(--text-primary);
 }
 
+/* Danger Variant */
 .bl-btn--danger {
   background: var(--color-danger);
   color: white;

@@ -5,16 +5,20 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 1.1rem;
   min-height: calc(100vh - var(--navbar-height));
 }
 
-.bl-sidebar__section-title {
-  font-size: 0.675rem;
+.bl-sidebar__header {
+  padding: 0 0.75rem 1rem;
+}
+
+.bl-sidebar__role-tag {
+  font-size: 0.7rem;
   letter-spacing: 0.08em;
   color: var(--text-muted);
-  font-weight: 700;
-  padding: 0 0.75rem 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .bl-sidebar__nav {
@@ -28,12 +32,12 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.65rem 0.75rem;
-  border-radius: var(--radius-md);
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-pill);
   background: transparent;
   border: 1px solid transparent;
   color: var(--text-secondary);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
   text-align: left;
@@ -42,15 +46,14 @@
 }
 
 .bl-sidebar__item:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-subtle);
   color: var(--text-primary);
 }
 
 .bl-sidebar__item--active {
   background: var(--color-primary-light);
   color: var(--color-primary);
-  font-weight: 600;
-  border-color: rgba(59, 130, 246, 0.25);
+  font-weight: 700;
 }
 
 .bl-sidebar__icon {
@@ -66,41 +69,66 @@
 
 .bl-sidebar__owner {
   font-size: 0.65rem;
-  background: rgba(255, 255, 255, 0.06);
+  background: #f1f5f9;
   color: var(--text-muted);
-  padding: 2px 6px;
-  border-radius: var(--radius-full);
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
 }
 
 .bl-sidebar__item--active .bl-sidebar__owner {
-  background: rgba(59, 130, 246, 0.2);
+  background: rgba(37, 99, 235, 0.15);
   color: var(--color-primary);
 }
 
-.bl-sidebar__footer {
+.bl-sidebar__hover-arrow {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all var(--transition-fast);
+  color: var(--color-primary);
+}
+
+.bl-sidebar__item:hover .bl-sidebar__hover-arrow,
+.bl-sidebar__item--active .bl-sidebar__hover-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Featured deep navy promo card in sidebar */
+.bl-sidebar__promo {
   margin-top: auto;
-  padding-top: 1rem;
+  padding-top: 1.5rem;
 }
 
-.bl-sidebar__footer-card {
-  background: rgba(17, 24, 39, 0.6);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 0.85rem;
+.bl-sidebar__promo-card {
+  background: linear-gradient(135deg, var(--color-navy), var(--color-navy-dark));
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(30, 58, 138, 0.2);
 }
 
-.bl-sidebar__footer-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8rem;
+.bl-sidebar__promo-badge {
+  display: inline-block;
+  font-size: 0.65rem;
   font-weight: 700;
-  color: var(--color-primary);
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.bl-sidebar__promo-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   margin-bottom: 0.35rem;
 }
 
-.bl-sidebar__footer-text {
-  font-size: 0.725rem;
-  color: var(--text-secondary);
-  line-height: 1.4;
+.bl-sidebar__promo-desc {
+  font-size: 0.775rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.45;
 }
