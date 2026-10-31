@@ -1,0 +1,37 @@
+.bl-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.bl-page-header__title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.bl-page-header__title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(180deg, #ffffff, #d1d5db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bl-page-header__desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-top: 0.35rem;
+}
+
+.bl-page-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
